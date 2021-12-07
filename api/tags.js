@@ -1,15 +1,16 @@
 const express = require('express');
 const tagsRouter = express.Router();
 
-
 tagsRouter.use((req, res, next) => {
   console.log("A request is being made to /tags");
 
-  next(); // THIS IS DIFFERENT
+  next(); 
 });
 
+// NEW
 const { getAllTags } = require('../db');
 
+// UPDATE
 tagsRouter.get('/', async (req, res) => {
   const tags = await getAllTags();
 

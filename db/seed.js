@@ -8,6 +8,12 @@ const {
   updatePost,
   getAllPosts,
   getPostsByTagName,
+  getPostsByUser,
+  createTags,
+  addTagsToPost,
+  getPostById,
+  createPostTag,
+  getUserByUsername
 } = require('./index');
 
 async function dropTables() {
@@ -195,3 +201,4 @@ rebuildDB()
   .then(testDB)
   .catch(console.error)
   .finally(() => client.end());
+
